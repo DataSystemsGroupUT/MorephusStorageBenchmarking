@@ -1,5 +1,12 @@
-# CAPS Performance Benchmarking with differnt Property Graph Backends.
+# Morpheus Performance Benchmarking with differnt Property Graph Backends.
 
-The goal of this  expriment is to Benchmark the performance of Cypher for Apache Spark (CAPS) ; or it is called currently 'Morpheus', on top of its supported property graph storage backends. In this Benchamrking expriment, we are running 21 BI queries (valid to run) in CAPS on top  of different storage backends (BGDSs): Neo4j, Hive, and HDFS(CSV,Parquet,ORC).
+The goal of this  expriment is to Benchmark the performance of Cypher for Apache Spark (CAPS) ; or it is called currently 'Morpheus', on top of its supported property graph storage backends. 
 
-As we can seen from tables and figures that Hive has the worst performance in general for running most of the queries even they are not that complex. HDFS Backends in general outperform Neo4j  and Hive. In particular Parquet format in HDFS has the best performance, it outperforms ORC and CSV in most cases of running the queries.
+
+As initial steps, we have made some initial micro as well as macro benchmarking queries for evaluating the performance of different storage backends of Morpheus.
+
+We have used the LDBC-SNB BI  benchmark workload. In the first experiment (Atomic level) We run 18  Atomic level BI queries.
+
+In the second experiment (Macro Benchmarking): we run 21 BI queries out of (valid to run in Morpheus Cypher).
+
+
