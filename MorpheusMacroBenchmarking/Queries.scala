@@ -2,11 +2,7 @@ package org.opencypher.spark.ragabexamples
 
 class Queries {
 
-
-  
-
     /// Q1  BI ///
-
 
     val  Q1 =
       """
@@ -264,9 +260,9 @@ class Queries {
 
 
 
-    //Q 10 BI/////   has the the problem of not storing nodes inside lists
+     //Q10  has the the problem of not storing nodes inside lists
 
-    // Q11 Lists Comprehension is not supported by CAPS
+     // Q11 Lists Comprehension is not supported by CAPS
 
 
 
@@ -292,7 +288,7 @@ class Queries {
     """.stripMargin  
 
 
-    // BI Q13 Working with some workarounds  :)
+    // BI Q13 
 
   val  Q13 = """MATCH
         |    (:Country {name:'Germany'})<-[:islocatedin]-(message:Message)
@@ -327,6 +323,7 @@ class Queries {
     // BI Q14
     // Not Working because of the unbound-variable [:replyof*0..] not already supported by CAPS
     // But working with removing the unbound-variable [:replyof*0..] to be just direct relationship [:replyof]
+  
     val  Q14 = """
       |MATCH (person:Person)<-[:hascreator]-(post:Post)<-[:replyof]-(reply:Message)
       |WHERE  post.creationDate >= '2010-11-21T14:49:12.199+0000'
@@ -347,7 +344,7 @@ class Queries {
 
 
 
-    // BI  Q15 ///////////// Working!! :)
+    //Q15 
 
   val  Q15 =  """
       |MATCH
@@ -478,8 +475,7 @@ class Queries {
 
 
     //BI Q 21
-    // Working but need to check it again because zombie in the return is null ?!!!!
-
+    
     val  Q21 =
     """
       |MATCH (country:Country {name:'China'})
@@ -543,7 +539,7 @@ class Queries {
 
 
   // BI  Q22
-  // It's very very expensive query :( But still Running 
+  // It's very very expensive query 
 
   val  Q22 =
     """
@@ -591,7 +587,7 @@ class Queries {
 
 
 
-  //Q23 Running :)
+  //Q23 
 
   val  Q23=
     """
@@ -644,7 +640,5 @@ class Queries {
 
 
   //Q25 weighted paths are not currently supported by CAPS
-
-
 
 }
